@@ -20,6 +20,7 @@ class PickStoryViewController: UIViewController {
     @IBOutlet weak var clothesStoryButton: UIButton!
     @IBOutlet weak var danceStoryButton: UIButton!
     
+    // different stories for different buttons
     @IBAction func storyButtonPressed(_ sender: UIButton) {
         switch sender {
         case simpleStoryButton:
@@ -43,11 +44,11 @@ class PickStoryViewController: UIViewController {
             let text = try! String(contentsOfFile: storyPath!, encoding: .utf8)
             story = Story(withText: text)
             
-        
         default:
             break
-            
         }
+        
+        // go to next view controller after button is oressed
         performSegue(withIdentifier: "WordsViewSegue", sender: nil)
         
     }
@@ -58,6 +59,7 @@ class PickStoryViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    // prepare for next view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nav = segue.destination as? UINavigationController {
             if let destination = nav.topViewController as? WordsViewController {
@@ -66,14 +68,6 @@ class PickStoryViewController: UIViewController {
     
         }
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
