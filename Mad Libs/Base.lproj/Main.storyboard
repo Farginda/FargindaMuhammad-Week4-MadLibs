@@ -1,24 +1,319 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Introduction View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="IntroductionViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Sc2-6Z-7tO">
+                                <rect key="frame" x="0.0" y="30" width="375" height="637"/>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="nOP-TU-HmM">
+                                <rect key="frame" x="16" y="365" width="343" height="130"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Welcome to Mad Libs! I will ask you to fill in words to complete a story. You won't be able to see the whole story until you are done filling in all the missing words. That's part of the fun. Click below to get started!</string>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w3f-Gb-D1z">
+                                <rect key="frame" x="87" y="546" width="201" height="51"/>
+                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                <state key="normal" title="GET STARTED!">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="qKL-NG-JeM" kind="show" id="Oxl-fv-eTx"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madlibs" translatesAutoresizingMaskIntoConstraints="NO" id="bwf-KO-WDP">
+                                <rect key="frame" x="43" y="30" width="289" height="315"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="315" id="hQg-Lh-Idu"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bwf-KO-WDP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="43" id="3Yc-PT-9UI"/>
+                            <constraint firstItem="w3f-Gb-D1z" firstAttribute="top" secondItem="nOP-TU-HmM" secondAttribute="bottom" constant="51" id="8hu-aC-4MF"/>
+                            <constraint firstItem="Sc2-6Z-7tO" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="93g-PR-aSj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="w3f-Gb-D1z" secondAttribute="bottom" constant="70" id="ASe-g4-qcM"/>
+                            <constraint firstItem="bwf-KO-WDP" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="EIS-ko-vbe"/>
+                            <constraint firstItem="bwf-KO-WDP" firstAttribute="centerX" secondItem="nOP-TU-HmM" secondAttribute="centerX" id="S1G-gy-OjB"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nOP-TU-HmM" secondAttribute="trailing" constant="16" id="cXG-ME-JDC"/>
+                            <constraint firstItem="nOP-TU-HmM" firstAttribute="top" secondItem="bwf-KO-WDP" secondAttribute="bottom" constant="20" id="caG-C8-B5m"/>
+                            <constraint firstItem="Sc2-6Z-7tO" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iYe-I4-tKK"/>
+                            <constraint firstItem="w3f-Gb-D1z" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="tWJ-9e-WMc"/>
+                            <constraint firstItem="nOP-TU-HmM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="vPT-3H-5mD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="w3f-Gb-D1z" secondAttribute="trailing" constant="87" id="zu4-My-OCw"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-220" y="31.934032983508249"/>
+        </scene>
+        <!--Words View Controller-->
+        <scene sceneID="i5o-ky-chg">
+            <objects>
+                <viewController id="zHP-0i-uMt" customClass="WordsViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="UT7-jz-fk5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2S0-qL-nbl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fill in the words to complete the story!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="665-N6-65o">
+                                <rect key="frame" x="16" y="118" width="343" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gdu-VY-jOS">
+                                <rect key="frame" x="166" y="282" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUl-xz-fdw">
+                                <rect key="frame" x="166" y="356" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qks-Cc-oNg">
+                                <rect key="frame" x="329" y="317" width="30" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="OK!"/>
+                                <connections>
+                                    <action selector="enterButtonPressed:" destination="zHP-0i-uMt" eventType="touchUpInside" id="dgY-QC-ZJd"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2QC-VP-IW3">
+                                <rect key="frame" x="16" y="318.5" width="298" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2QC-VP-IW3" firstAttribute="centerY" secondItem="UT7-jz-fk5" secondAttribute="centerY" id="JPP-0s-pws"/>
+                            <constraint firstItem="qks-Cc-oNg" firstAttribute="centerY" secondItem="UT7-jz-fk5" secondAttribute="centerY" id="feY-zx-qZR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="KWt-Xh-t97"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pen-4Y-nOk"/>
+                    <connections>
+                        <outlet property="enterButton" destination="qks-Cc-oNg" id="ZSc-h5-2b8"/>
+                        <outlet property="wordCount" destination="Gdu-VY-jOS" id="BdC-ej-rY9"/>
+                        <outlet property="wordInput" destination="2QC-VP-IW3" id="qXi-tA-MSl"/>
+                        <outlet property="wordSort" destination="wUl-xz-fdw" id="Zdn-ec-zmW"/>
+                        <segue destination="vEP-1p-cXH" kind="show" id="mlt-hQ-VEc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Eqp-BY-rGE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2328.8000000000002" y="28.335832083958024"/>
+        </scene>
+        <!--Story View Controller-->
+        <scene sceneID="hXE-gA-l4v">
+            <objects>
+                <viewController id="vEP-1p-cXH" customClass="StoryViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Y0k-3r-a2q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="5eA-Kp-HQc">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your Mad Libs Story!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qSA-87-0HZ">
+                                <rect key="frame" x="54" y="85" width="266" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVe-tV-E8f">
+                                <rect key="frame" x="16" y="129" width="343" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8pj-Ua-7MT">
+                                <rect key="frame" x="124" y="579" width="126" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create New Story!"/>
+                                <connections>
+                                    <segue destination="jlt-p5-sNb" kind="unwind" unwindAction="unwindToIntroductionWithSegue:" id="iJw-p1-geN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="5eA-Kp-HQc" firstAttribute="centerX" secondItem="Y0k-3r-a2q" secondAttribute="centerX" id="1lp-HW-8mh"/>
+                            <constraint firstItem="5eA-Kp-HQc" firstAttribute="centerY" secondItem="Y0k-3r-a2q" secondAttribute="centerY" id="4B5-8U-tP9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GYx-1P-by9"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ckB-vm-83N">
+                        <barButtonItem key="rightBarButtonItem" title="New Story" id="H7L-6O-a3x">
+                            <connections>
+                                <segue destination="jlt-p5-sNb" kind="unwind" unwindAction="unwindToIntroductionWithSegue:" id="8lE-oA-mJh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="finalStory" destination="cVe-tV-E8f" id="2af-TN-CbQ"/>
+                        <outlet property="newStoryButton" destination="8pj-Ua-7MT" id="kn6-iA-R0I"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luT-6J-Bv8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jlt-p5-sNb" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3040.8000000000002" y="31.934032983508249"/>
+        </scene>
+        <!--Pick Story View Controller-->
+        <scene sceneID="Q6J-0j-S4B">
+            <objects>
+                <viewController id="qKL-NG-JeM" customClass="PickStoryViewController" customModule="Mad_Libs" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SEo-q1-sns">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="bOK-Jk-Oxt">
+                                <rect key="frame" x="98.5" y="314" width="178" height="39"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="70" translatesAutoresizingMaskIntoConstraints="NO" id="qkR-5S-1qK">
+                                <rect key="frame" x="98.5" y="171.5" width="178" height="324"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick A Story!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1z9-8n-hXD">
+                                        <rect key="frame" x="0.0" y="0.0" width="178" height="39"/>
+                                        <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="T5Z-Vf-QAY">
+                                        <rect key="frame" x="51" y="109" width="76" height="215"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZz-8Q-kXF">
+                                                <rect key="frame" x="0.0" y="0.0" width="52" height="35"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <state key="normal" title="Simple">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="simpleStoryButtonPressed:" destination="qKL-NG-JeM" eventType="touchUpInside" id="f2z-c5-E4Z"/>
+                                                    <action selector="storyButtonPressed:" destination="qKL-NG-JeM" eventType="touchUpInside" id="Clu-sw-vHk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOE-Zb-X3y">
+                                                <rect key="frame" x="0.0" y="45" width="54" height="35"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <state key="normal" title="Tarzan">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="storyButtonPressed:" destination="qKL-NG-JeM" eventType="touchUpInside" id="WWe-in-MyE"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mzw-RQ-bzk">
+                                                <rect key="frame" x="0.0" y="90" width="76" height="35"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <state key="normal" title="University">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="storyButtonPressed:" destination="qKL-NG-JeM" eventType="touchUpInside" id="GA4-YG-N0e"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnf-oA-eYR">
+                                                <rect key="frame" x="0.0" y="135" width="58" height="35"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <state key="normal" title="Clothes">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="storyButtonPressed:" destination="qKL-NG-JeM" eventType="touchUpInside" id="auF-If-mt6"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qKy-nR-15m">
+                                                <rect key="frame" x="0.0" y="180" width="50" height="35"/>
+                                                <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
+                                                <state key="normal" title="Dance">
+                                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="storyButtonPressed:" destination="qKL-NG-JeM" eventType="touchUpInside" id="90j-cI-qYh"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="qkR-5S-1qK" firstAttribute="centerY" secondItem="SEo-q1-sns" secondAttribute="centerY" id="0HD-RK-o7u"/>
+                            <constraint firstItem="bOK-Jk-Oxt" firstAttribute="centerY" secondItem="SEo-q1-sns" secondAttribute="centerY" id="IkE-W1-H4K"/>
+                            <constraint firstItem="bOK-Jk-Oxt" firstAttribute="centerX" secondItem="SEo-q1-sns" secondAttribute="centerX" id="LrA-U2-nta"/>
+                            <constraint firstItem="qkR-5S-1qK" firstAttribute="centerX" secondItem="SEo-q1-sns" secondAttribute="centerX" id="SFb-ch-Hkl"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="nZz-kd-kW5"/>
+                    </view>
+                    <connections>
+                        <outlet property="clothesStoryButton" destination="Gnf-oA-eYR" id="M1R-4g-QYu"/>
+                        <outlet property="danceStoryButton" destination="qKy-nR-15m" id="sGy-hz-kny"/>
+                        <outlet property="simpleStoryButton" destination="bZz-8Q-kXF" id="muA-IH-vwI"/>
+                        <outlet property="tarzanStoryButton" destination="FOE-Zb-X3y" id="cYX-OU-yra"/>
+                        <outlet property="universityStoryButton" destination="mzw-RQ-bzk" id="fFm-zl-aYj"/>
+                        <segue destination="Mbs-h7-O7g" kind="show" id="Dmu-Kz-4Gn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="92F-cV-AqX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="605.60000000000002" y="27.436281859070466"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="yaE-E1-7C3">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFn-Fw-rCD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Mbs-h7-O7g" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="3eq-Ps-goT">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="zHP-0i-uMt" kind="relationship" relationship="rootViewController" id="Vti-vt-gkq"/>
+                    </connections>
+                </navigationController>
+            </objects>
+            <point key="canvasLocation" x="1389.5999999999999" y="28.335832083958024"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="madlibs" width="101.51999664306641" height="110.87999725341797"/>
+    </resources>
 </document>
