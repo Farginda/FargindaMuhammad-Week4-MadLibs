@@ -11,7 +11,6 @@ import UIKit
 class PickStoryViewController: UIViewController {
     
     
-    
     var story: Story!
 
     // story buttons
@@ -43,10 +42,14 @@ class PickStoryViewController: UIViewController {
             let storyPath = Bundle.main.path(forResource: "madlib4_dance", ofType: "txt")
             let text = try! String(contentsOfFile: storyPath!, encoding: .utf8)
             story = Story(withText: text)
+            
+        
         default:
             break
             
         }
+        performSegue(withIdentifier: "WordsViewSegue", sender: nil)
+        
     }
     
     override func viewDidLoad() {
@@ -57,8 +60,8 @@ class PickStoryViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let nav = segue.destination as? UINavigationController {
-            if let destination = nav.topViewController {
-            // segue.destination.story = story
+            if let destination = nav.topViewController as? WordsViewController {
+            destination.story = story
             }
     
         }

@@ -40,15 +40,14 @@ class WordsViewController: UIViewController {
         }
     }
     
-    
+    // update OK button and go to next view controller
     func updateOkButton() {
-        if let remaining = story?.remainingPlaceholders {
-            if remaining > 0 {
-                enterButton.setTitle("OK!", for: .normal)
-            }
-            else {
-                enterButton.setTitle("See Story!", for: .normal)
-            }
+        if story!.remainingPlaceholders > 0 {
+            enterButton.setTitle("OK!", for: .normal)
+        }
+        else if story.remainingPlaceholders == 0 {
+            enterButton.setTitle("Story!", for: .normal)
+            performSegue(withIdentifier: "StoryViewSegue", sender: nil)
         }
     }
     
@@ -58,13 +57,12 @@ class WordsViewController: UIViewController {
             story.fillInPlaceholder(word: wordInput.text!)
             updateWordCount()
             updateWordType()
+            updateOkButton()
             wordInput.text = ""
         }
         else {
-            performSegue(withIdentifier: "StoryViewController", sender: nil)
-                // go to next viewcontroller if end of placeholders
+            performSegue(withIdentifier: "StoryViewSegue", sender: nil)
         }
-
     }
     
     // update all functions
@@ -74,6 +72,12 @@ class WordsViewController: UIViewController {
         updateOkButton()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "StoryViewSegue" {
+            let destination = segue.destination as! StoryViewController
+            destination.story = story
+        }
+    }
     
     /*
     // MARK: - Navigation

@@ -18,6 +18,11 @@
 		183E608721A345CD006DCEFB /* PickStoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E608621A345CD006DCEFB /* PickStoryViewController.swift */; };
 		183E608921A34611006DCEFB /* WordsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E608821A34611006DCEFB /* WordsViewController.swift */; };
 		183E608B21A34631006DCEFB /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 183E608A21A34631006DCEFB /* StoryViewController.swift */; };
+		183E609121A56569006DCEFB /* madlib2_university.txt in Resources */ = {isa = PBXBuildFile; fileRef = 183E608C21A56568006DCEFB /* madlib2_university.txt */; };
+		183E609221A56569006DCEFB /* madlib1_tarzan.txt in Resources */ = {isa = PBXBuildFile; fileRef = 183E608D21A56569006DCEFB /* madlib1_tarzan.txt */; };
+		183E609321A56569006DCEFB /* madlib0_simple.txt in Resources */ = {isa = PBXBuildFile; fileRef = 183E608E21A56569006DCEFB /* madlib0_simple.txt */; };
+		183E609421A56569006DCEFB /* madlib4_dance.txt in Resources */ = {isa = PBXBuildFile; fileRef = 183E608F21A56569006DCEFB /* madlib4_dance.txt */; };
+		183E609521A56569006DCEFB /* madlib3_clothes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 183E609021A56569006DCEFB /* madlib3_clothes.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +60,11 @@
 		183E608621A345CD006DCEFB /* PickStoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickStoryViewController.swift; sourceTree = "<group>"; };
 		183E608821A34611006DCEFB /* WordsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsViewController.swift; sourceTree = "<group>"; };
 		183E608A21A34631006DCEFB /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		183E608C21A56568006DCEFB /* madlib2_university.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = madlib2_university.txt; sourceTree = "<group>"; };
+		183E608D21A56569006DCEFB /* madlib1_tarzan.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = madlib1_tarzan.txt; sourceTree = "<group>"; };
+		183E608E21A56569006DCEFB /* madlib0_simple.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = madlib0_simple.txt; sourceTree = "<group>"; };
+		183E608F21A56569006DCEFB /* madlib4_dance.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = madlib4_dance.txt; sourceTree = "<group>"; };
+		183E609021A56569006DCEFB /* madlib3_clothes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = madlib3_clothes.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +115,11 @@
 		183E605521A2D80C006DCEFB /* Mad Libs */ = {
 			isa = PBXGroup;
 			children = (
+				183E608E21A56569006DCEFB /* madlib0_simple.txt */,
+				183E608D21A56569006DCEFB /* madlib1_tarzan.txt */,
+				183E608C21A56568006DCEFB /* madlib2_university.txt */,
+				183E609021A56569006DCEFB /* madlib3_clothes.txt */,
+				183E608F21A56569006DCEFB /* madlib4_dance.txt */,
 				183E605621A2D80C006DCEFB /* AppDelegate.swift */,
 				183E605821A2D80C006DCEFB /* IntroductionViewController.swift */,
 				183E608421A2D8BD006DCEFB /* Story.swift */,
@@ -241,8 +256,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				183E609421A56569006DCEFB /* madlib4_dance.txt in Resources */,
+				183E609321A56569006DCEFB /* madlib0_simple.txt in Resources */,
+				183E609121A56569006DCEFB /* madlib2_university.txt in Resources */,
+				183E609221A56569006DCEFB /* madlib1_tarzan.txt in Resources */,
 				183E606121A2D80D006DCEFB /* LaunchScreen.storyboard in Resources */,
 				183E605E21A2D80D006DCEFB /* Assets.xcassets in Resources */,
+				183E609521A56569006DCEFB /* madlib3_clothes.txt in Resources */,
 				183E605C21A2D80C006DCEFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

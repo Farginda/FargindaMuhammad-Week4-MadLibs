@@ -10,16 +10,20 @@ import UIKit
 
 class StoryViewController: UIViewController {
 
-    var story: Story!
+    
+    var story = Story(withText: String())
+    
     @IBOutlet weak var finalStory: UILabel!
     @IBOutlet weak var newStoryButton: UIButton!
+    @IBOutlet weak var madlibStory: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
+        madlibStory.text = story.normalText
+
+        }
     }
-    
+
 
     /*
     // MARK: - Navigation
@@ -31,4 +35,4 @@ class StoryViewController: UIViewController {
     }
     */
 
-}
+
